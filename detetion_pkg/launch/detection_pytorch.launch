@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<include file="$(find darknet_ros_3d)/launch/darknet_ros_3d_gdb.launch"/>
+	<arg name="dynamic_params" default="true"/>
+	<node pkg="detetion_pkg" type="boson_pytorch.py" name="video_sub_py" if ="$(arg dynamic_params)"/>
+	<param name="image_recognition" value="True" />
+</launch>
